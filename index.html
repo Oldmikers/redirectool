@@ -159,7 +159,6 @@
         <h2></h2>
         <h4></h4>
         <input type="url" id="inputs-1" onkeydown="handleEnter(event)">
-        <button onclick="goto_url()">Go to URL</button>
         <button onclick="goto_gle()">Google (proxy)</button>
         <!-- ... (your other buttons) -->
 
@@ -180,15 +179,6 @@
     </div>
 
     <script>
-        function goto_url() {
-            const element = document.getElementById('inputs-1');
-            window.location.href = element.value;
-        }
-
-        function goto_prox(s) {
-            // Your existing code for this function
-        }
-
         function goto_gle() {
             const element = "https://google.com";
             window.location.href = element;
@@ -217,7 +207,8 @@
         // Handle 'Enter' key press in the input field
         function handleEnter(event) {
             if (event.key === 'Enter') {
-                goto_url();
+                const element = document.getElementById('inputs-1');
+                window.location.href = element.value;
             }
         }
 
