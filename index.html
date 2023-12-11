@@ -112,6 +112,28 @@
             font-size: 20px;
             cursor: pointer;
         }
+
+        /* Additional styles for settings options */
+        .settings-option {
+            display: block;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .settings-option:hover {
+            background-color: #000;
+        }
+
+        .settings-option:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 <body>
@@ -132,4 +154,56 @@
         <!-- Settings modal -->
         <div id="settings-modal" class="modal">
             <div class="modal-content">
-                <span class="close" onclick="closeSettings()
+                <span class="close" onclick="closeSettings()">&times;</span>
+                <!-- Settings options -->
+                <button class="settings-option" onclick="redirectToHome()">Home</button>
+                <button class="settings-option" onclick="redirectToProxify()">Proxify</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goto_url() {
+            const element = document.getElementById('inputs-1');
+            window.location.href = element.value;
+        }
+
+        function goto_prox(s) {
+            // Your existing code for this function
+        }
+
+        function goto_gle() {
+            const element = "https://google.com";
+            window.location.href = element;
+        }
+
+        // Function to redirect to the home link
+        function redirectToHome() {
+            window.location.href = "https://oldmikers.github.io/";
+        }
+
+        // Function to redirect to the proxify link
+        function redirectToProxify() {
+            window.location.href = "https://uv.shieldbotlist.xyz/uv/service/hvtrs8%2F-ondoiieps%2Cgktju%60.ko-rgdkrgcvoml-";
+        }
+
+        // Function to open the settings modal
+        function openSettings() {
+            document.getElementById('settings-modal').style.display = 'block';
+        }
+
+        // Function to close the settings modal
+        function closeSettings() {
+            document.getElementById('settings-modal').style.display = 'none';
+        }
+
+        // Close modal if user clicks outside the modal
+        window.onclick = function(event) {
+            var modal = document.getElementById('settings-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
