@@ -13,6 +13,7 @@
             font-family: Arial, sans-serif;
             font-size: 16px;
             line-height: 1.5;
+            color: #fff;
         }
 
         .container {
@@ -22,6 +23,7 @@
             justify-content: center;
             min-height: 100vh;
             position: relative;
+            padding: 20px;
         }
 
         h1 {
@@ -32,7 +34,6 @@
         }
 
         h2, h4 {
-            color: #f1f1f1;
             font-size: 24px;
             font-weight: bold;
             margin-top: 20px;
@@ -133,6 +134,21 @@
 
         .settings-option:active {
             transform: scale(0.95);
+        }
+
+        /* Responsive styles */
+        @media only screen and (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            h2, h4 {
+                font-size: 18px;
+            }
+
+            button {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
