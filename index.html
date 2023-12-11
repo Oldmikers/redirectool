@@ -34,7 +34,7 @@
         }
 
         h1 {
-            color: #f1f1f1;
+            color: red;
             font-size: 36px;
             font-weight: bold;
             margin-bottom: 20px;
@@ -78,6 +78,19 @@
         button:active {
             transform: scale(0.95);
         }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .snowflake {
+            animation: fall linear infinite;
+        }
     </style>
 </head>
 <body>
@@ -88,7 +101,7 @@
         <h4></h4>
         <input type="url" id="inputs-1">
         <button onclick="goto_url()">Go to URL</button>
-        <button onclick="goto_gle()">Google</button>
+        <button onclick="goto_gle()">Google (proxy)</button>
         <!-- ... (your other buttons) -->
     </div>
 
