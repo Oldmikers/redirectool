@@ -24,15 +24,6 @@
             position: relative;
         }
 
-        .snowflake {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            width: 10px;
-            height: 10px;
-            animation: fall linear infinite;
-        }
-
         h1 {
             color: red;
             font-size: 36px;
@@ -78,23 +69,9 @@
         button:active {
             transform: scale(0.95);
         }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100vh);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        .snowflake {
-            animation: fall linear infinite;
-        }
     </style>
 </head>
 <body>
-    <h1 id="credits"></h1>
     <div class="container">
         <h1>Michael's Redirectool</h1>
         <h2></h2>
@@ -106,27 +83,6 @@
     </div>
 
     <script>
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.className = 'snowflake';
-            snowflake.style.left = `${Math.random() * window.innerWidth}px`;
-            document.body.appendChild(snowflake);
-        }
-
-        function createSnowfall() {
-            for (let i = 0; i < 50; i++) {
-                createSnowflake();
-            }
-        }
-
-        function startSnowfall() {
-            createSnowfall();
-            setInterval(createSnowflake, 1000);
-        }
-
-        // Ensure that the snowfall starts after all content is loaded
-        window.addEventListener('load', startSnowfall);
-
         function goto_url() {
             const element = document.getElementById('inputs-1');
             window.location.href = element.value;
