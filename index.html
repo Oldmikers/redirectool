@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +34,8 @@
             margin-bottom: 20px;
         }
 
-        h2, h4 {
+        h2,
+        h4 {
             font-size: 24px;
             font-weight: bold;
             margin-top: 20px;
@@ -143,7 +145,8 @@
                 font-size: 24px;
             }
 
-            h2, h4 {
+            h2,
+            h4 {
                 font-size: 18px;
             }
 
@@ -151,8 +154,22 @@
                 font-size: 14px;
             }
         }
+
+        /* Additional styles for DuckDuckGo button */
+        #duckduckgo-button {
+            background-color: #ff6600;
+        }
+
+        #duckduckgo-button:hover {
+            background-color: #cc5200;
+        }
+
+        #duckduckgo-button:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Michael's Redirectool</h1>
@@ -160,6 +177,7 @@
         <h4></h4>
         <input type="url" id="inputs-1" onkeydown="handleEnter(event)">
         <button onclick="goto_gle()">Google</button>
+        <button id="duckduckgo-button" onclick="goto_duckduckgo()">DuckDuckGo</button>
         <!-- ... (your other buttons) -->
 
         <!-- Settings button -->
@@ -179,6 +197,13 @@
     </div>
 
     <script>
+        // Function to redirect to DuckDuckGo
+        function goto_duckduckgo() {
+            const duckDuckGoURL = "https://uv.shieldbotlist.xyz/uv/service/hvtrs8%2F-dwcidwcigm.aoo%2F";
+            window.location.href = duckDuckGoURL;
+        }
+
+        // Function to redirect to Google
         function goto_gle() {
             const element = "https://google.com";
             window.location.href = element;
@@ -209,7 +234,7 @@
             if (event.key === 'Enter') {
                 const element = document.getElementById('inputs-1');
                 let url = element.value.trim();
-                
+
                 // Check if the URL starts with 'http://' or 'https://'
                 if (!url.startsWith('http://') && !url.startsWith('https://')) {
                     // If not, prepend 'https://'
@@ -229,4 +254,5 @@
         };
     </script>
 </body>
+
 </html>
