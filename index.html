@@ -166,6 +166,20 @@
         #duckduckgo-button:active {
             transform: scale(0.95);
         }
+
+        /* Spin effect for settings button on hover */
+        .settings-button:hover {
+            animation: spin 0.5s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
     </style>
 </head>
 
